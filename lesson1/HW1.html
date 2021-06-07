@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+    div{
+      background-color: lightcoral;
+      padding: 20px;
+      text-align: center;
+      color: blue;
+    }
+    button{
+      padding: 20px;
+      margin-left:265px;
+      margin-right:265px;
+      margin-top: 40px;
+    }
+  </style>
+
+
+</head>
+<body>
+<div id="1">Жорик Вартанов</div>
+<div id="2">Интересы</div>
+<button id="3">
+  Еда
+</button>
+<button id="4">
+  Нипиток
+</button>
+<button id="5">
+  Хобби
+</button>
+
+<script>
+  let interests = document.getElementById('2');
+  let food = document.getElementById('3');
+  let drink = document.getElementById('4');
+  let hobby = document.getElementById('5');
+
+  food.addEventListener('click', function (){
+    interests.innerText = 'Шашлык'
+  })
+  drink.addEventListener('click', function (){
+    interests.innerText = 'Вино'
+  })
+  hobby.addEventListener('click', function (){
+    interests.innerText = 'Банки-Базуки'
+  })
+
+  alert(
+          "\\Kitsul\\ \n" +
+          "\"Yuriy\" \n" +
+          "\* +380112223344 \n" +
+          "\u26D4Odessa"
+  )
+</script>
+</body>
+</html>
