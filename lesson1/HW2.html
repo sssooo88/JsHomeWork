@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+    div{
+      background-color: lightcoral;
+      padding: 20px;
+      text-align: center;
+      color: blue;
+    }
+    button{
+      padding: 20px;
+      margin-left:265px;
+      margin-right:265px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<div id="1">Конвертер</div>
+
+<button id="2">
+  Среднее арифметическое из 2 чисел.
+</button>
+
+<button id="3">
+  Получить число в третьей степени.
+</button>
+
+<button id="4">
+  Вычислить площадь окружности по радиусу.
+</button>
+
+<button id="5">
+  Обмен валюты.
+</button>
+
+<button id="6">
+  Перевод сухопутных миль в километры.
+</button>
+
+<button id="7">
+  Сумма купюр.
+</button>
+
+<button id="8">
+  Ввести с клавиатуры два 3-значных числа и поменять у них средние цифры.
+</button>
+
+<button id="9">
+  Ввести 4-значное число и подсчитать сумму первой и третьей цифры и разность второй и четвертой цифры.
+</button>
+
+<button id="10">
+  Ввести с клавиатуры 3-значное число и удалить из него среднюю цифру.
+</button>
+
+<button id="11">
+  Вввести с клавиатуры 3-значное число и «перевернуть» его.
+</button>
+<script>
+  let average = document.getElementById('2');
+  let thirdDegree = document.getElementById('3');
+  let area = document.getElementById('4');
+  let exchanger = document.getElementById('5');
+  let converter = document.getElementById('6');
+  let sum = document.getElementById('7');
+  let swapNumbers = document.getElementById('8');
+  let numberOperation = document.getElementById('9');
+  let delete3Number = document.getElementById('10');
+  let swapNumbers2 = document.getElementById('11');
+
+  average.addEventListener('click', function (){
+    let title1 = 'введи число 1';
+    let getNum1 = prompt(title1);
+    let fltNum1 = parseFloat(getNum1);
+    let title2 = 'введи число 2';
+    let getNum2 = prompt(title2);
+    let fltNum2 = parseFloat(getNum2);
+    alert((fltNum1+fltNum2)/2)
+  })
+
+  thirdDegree.addEventListener('click', function (){
+    let title = 'Введи число:';
+    let getNum = prompt(title,'введи число');
+    let fltNum = parseFloat(getNum);
+    alert(fltNum ** 3)
+  })
+
+  area.addEventListener('click', function (){
+    let title = 'Введите радиус окружности';
+    let getNum = prompt(title);
+    let fltNum = parseFloat(getNum);
+    const PI = 3.14
+    alert(PI * (fltNum ** 2))
+  })
+
+  exchanger.addEventListener('click', function (){
+    let title = 'Введите сумму долларов. Курс 1$ = 27grn';
+    let getNum = prompt(title);
+    let fltNum = parseFloat(getNum);
+    const EXCHANGE = 27
+    alert(fltNum * EXCHANGE)
+  })
+
+  converter.addEventListener('click', function (){
+    let title = 'Введите количество миль';
+    let getNum = prompt(title);
+    let fltNum = parseFloat(getNum);
+    const CONVERT = 1.609
+    alert(fltNum * CONVERT)
+  })
+
+  sum.addEventListener('click', function (){
+    let title1 = 'Введите наминал первой банкноты:';
+    let getNote1 = prompt(title1);
+    let intNote1 = parseInt(getNote1);
+    let title2 = 'Введите количество первых банкнот:';
+    let getNote1Quantity = prompt(title2);
+    let intNote1Quantity = parseFloat(getNote1Quantity);
+    let title3 = 'Введите наминал второй банкноты:';
+    let getNote2 = prompt(title3);
+    let intNote2 = parseInt(getNote2);
+    let title4 = 'Введите количество вторых банкнот:';
+    let getNote2Quantity = prompt(title4);
+    let intNote2Quantity = parseFloat(getNote2Quantity);
+    let title5 = 'Введите наминал третьи банкноты:';
+    let getNote3 = prompt(title5);
+    let intNote3 = parseInt(getNote3);
+    let title6 = 'Введите количество третьих банкнот:';
+    let getNote3Quantity = prompt(title6);
+    let intNote3Quantity = parseFloat(getNote3Quantity);
+    alert((intNote1*intNote1Quantity)+(intNote2*intNote2Quantity)+(intNote3*intNote3Quantity))
+  })
+
+  swapNumbers.addEventListener('click', function (){
+    let title1 = 'Введите техзначное число 1:';
+    let getNum1 = prompt(title1);
+    let intNum1 = parseInt(getNum1);
+    let num1Num1 = parseInt((intNum1 / 100) + '')
+    let num1Num2 = parseInt(((intNum1 - (num1Num1 * 100)) / 10 + ''))
+    let num1Num3 = parseInt(((intNum1 - ((num1Num1 * 100)+(num1Num2 * 10))) + ''))
+    let title2 = 'Введите техзначное число 2:';
+    let getNum2 = prompt(title2);
+    let intNum2 = parseInt(getNum2);
+    let num2Num1 = parseInt((intNum2 / 100) + '')
+    let num2Num2 = parseInt(((intNum2 - (num2Num1 * 100)) / 10 + ''))
+    let num2Num3 = parseInt(((intNum2 - ((num2Num1 * 100)+(num2Num2 * 10))) + ''))
+    alert(num1Num1 + '' + num2Num2 + '' + num1Num3 + ' '  +num2Num1 + '' + num1Num2 + '' + num2Num3)
+  })
+
+  numberOperation.addEventListener('click', function (){
+    let title= 'Введите чеырехзначное число:';
+    let getNum = prompt(title);
+    let intNum = parseInt(getNum);
+    let numNum1 = parseInt((intNum / 1000) + '')
+    let numNum2 = parseInt(((intNum - (numNum1 * 1000)) / 100 + ''))
+    let numNum3 = parseInt(((intNum - ((numNum1 * 1000)+(numNum2 * 100))) / 10 + ''))
+    let numNum4 = parseInt(((intNum - ((numNum1 * 1000)+(numNum2 * 100)+(numNum3 * 10))) + ''))
+    alert((numNum1 + numNum3) + ' ' + (numNum2 - numNum4))
+  })
+
+  delete3Number.addEventListener('click', function (){
+    let title= 'Введите трехзначное число:';
+    let getNum = prompt(title);
+    let intNum = parseInt(getNum);
+    let numNum1 = parseInt((intNum / 100) + '')
+    let numNum2 = parseInt(((intNum - (numNum1 * 100)) / 10 + ''))
+    let numNum3 = parseInt(((intNum - ((numNum1 * 100)+(numNum2 * 10))) + ''))
+    alert(numNum1 + '' + numNum3)
+  })
+
+  swapNumbers2.addEventListener('click', function (){
+    let title= 'Введите трехзначное число:';
+    let getNum = prompt(title);
+    let intNum = parseInt(getNum);
+    let numNum1 = parseInt((intNum / 100) + '')
+    let numNum2 = parseInt(((intNum - (numNum1 * 100)) / 10 + ''))
+    let numNum3 = parseInt(((intNum - ((numNum1 * 100)+(numNum2 * 10))) + ''))
+    alert(numNum3 + '' + numNum2 + '' + numNum1)
+  })
+
+
+
+
+
+</script>
+</body>
+</html>
