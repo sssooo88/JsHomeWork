@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>break and continue</title>
+</head>
+
+<body>
+<script>
+  let number
+  while (true) {
+    let value = prompt("Вводите числовые значения. Для выхода введите значение больше 10.")
+    if (!isNaN(Number(value))){
+      if (value > 10) { // опятьже может и (value >= 10)
+        number = value
+        break;
+      }
+    }
+  }
+  alert(`Число ${number} больше 10`);
+</script>
+</body>
+
+</html>

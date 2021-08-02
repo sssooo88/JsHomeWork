@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break and continue</title>
+</head>
+
+<body>
+<script>
+    let randomValue = Math.floor(Math.random() * 101)
+    let counter = 0
+    alert(`Я загадал случайное значение от 0 до 100. ${randomValue}`);
+    while (true) {
+        let value = Number(prompt("Угадай число."))
+        if (!isNaN(value)) {
+            if (value >= 0 && value <= 100) {
+                if (value > randomValue){
+                    alert(`я загадал значение меньше, чем ${value}`);
+                    counter++
+                }else if (value < randomValue){
+                    alert(`я загадал значение больше, чем ${value}`);
+                    counter++
+                }else {break}
+            }
+        }
+    }
+
+    alert(`Правильно! Загаданное значение ${randomValue}. Вы угадали с ${counter + 1}й попытки`);
+</script>
+</body>
+
+</html>
