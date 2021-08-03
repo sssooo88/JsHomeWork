@@ -11,23 +11,24 @@
 <script>
     let randomValue = Math.floor(Math.random() * 101)
     let counter = 0
-    alert(`Я загадал случайное значение от 0 до 100. ${randomValue}`);
+    alert(`Я загадал случайное значение от 0 до 100.`);
     while (true) {
         let value = Number(prompt("Угадай число."))
         if (!isNaN(value)) {
             if (value >= 0 && value <= 100) {
                 if (value > randomValue){
+                    counter++;
                     alert(`я загадал значение меньше, чем ${value}`);
-                    counter++
                 }else if (value < randomValue){
+                    counter++;
                     alert(`я загадал значение больше, чем ${value}`);
-                    counter++
-                }else {break}
+                }else {
+                    counter++;
+                    alert(`Правильно! Загаданное значение ${randomValue}. Вы угадали с ${counter}й попытки`);
+                    break;}
             }
         }
     }
-
-    alert(`Правильно! Загаданное значение ${randomValue}. Вы угадали с ${counter + 1}й попытки`);
 </script>
 </body>
 
