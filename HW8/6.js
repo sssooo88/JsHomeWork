@@ -27,4 +27,3 @@ values[min_index] = max_value
 values[max_index] = min_value
 
 console.log(values);
-
