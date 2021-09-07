@@ -9,8 +9,7 @@ let user2 = {
 };
 
 printObj = function (user){
-    console.log(user.lastName);
-    console.log(user.firstName);
+    console.log(user.lastName + " " + user.firstName);
 }
 
 printObj(user1)

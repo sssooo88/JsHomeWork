@@ -467,13 +467,13 @@
 
         maxFriends(users)
        
-        // //3
+        //3
         maxBalanceComp = function (userx){
             min = Number.MIN_VALUE;
             let userMaxBalance;
             for (const user of userx) {
-                if (user.balance > min){
-                    min = user.balance;
+                if (Number(user.balance) > min){
+                    min = Number(user.balance);
                     userMaxBalance = user.company;
                 }
             }
@@ -484,8 +484,8 @@
             max = Number.MAX_VALUE;
             let userMinBalance
             for (const user of userx) {
-                if (user.balance < max){
-                    max = user.balance;
+                if (Number(user.balance) < max){
+                    max = Number(user.balance);
                     userMinBalance = user.company;
                 }
             }
